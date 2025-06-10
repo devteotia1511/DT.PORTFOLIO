@@ -13,7 +13,7 @@ export default {
       },
       colors: {
         primary: {
-<<<<<<< HEAD
+
           50: '#eff6ff',
           100: '#dbeafe',
           200: '#bfdbfe',
@@ -84,7 +84,7 @@ export default {
           700: '#b91c1c',
           800: '#991b1b',
           900: '#7f1d1d',
-=======
+
           50: '#e3f5fd',
           100: '#c7ebfb',
           200: '#8fd7f7',
@@ -119,7 +119,7 @@ export default {
           700: '#007db3',
           800: '#005f8f',
           900: '#004a73',
->>>>>>> aa396a6 (Hero page updated)
+
         },
         dark: {
           50: '#f0f0f5',
@@ -175,19 +175,12 @@ export default {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-<<<<<<< HEAD
         'hero-gradient': 'linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)',
         'about-gradient': 'linear-gradient(135deg, #d946ef 0%, #a21caf 100%)',
         'experience-gradient': 'linear-gradient(135deg, #22c55e 0%, #15803d 100%)',
         'projects-gradient': 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
         'skills-gradient': 'linear-gradient(135deg, #ef4444 0%, #b91c1c 100%)',
         'contact-gradient': 'linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%)',
-=======
-        'dark-gradient': 'linear-gradient(135deg, #ed1c24 0%, #007db3 100%)',
-        'dark-gradient-subtle': 'linear-gradient(135deg, #d4171f 0%, #0098d7 100%)',
-        'text-gradient': 'linear-gradient(90deg, #00aeef, #ed1c24, #00aeef)',
-        'text-gradient-accent': 'linear-gradient(90deg, #ed1c24, #1fafef, #ed1c24)',
->>>>>>> aa396a6 (Hero page updated)
       },
       backgroundSize: {
         '200%': '200% 200%',
