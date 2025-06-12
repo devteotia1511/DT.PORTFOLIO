@@ -242,8 +242,8 @@ const Hero: React.FC = () => {
             >
                 {[
                 { icon: Github, href: "https://github.com/devteotia1511", label: "GitHub", color: "hover:text-gray-900 dark:hover:text-white" },
-                { icon: Linkedin, href: "https://www.linkedin.com/in/dev-teotia-62297928b/", label: "LinkedIn", color: "hover:text-blue-600" },
-                { icon: Mail, href: "mailto:devteotia1511@gmail.com", label: "Email", color: "hover:text-primary-800" }
+                { icon: Linkedin, href: "https://www.linkedin.com/in/dev-teotia-62297928b/", label: "LinkedIn", color: "hover:text-blue-600 dark:hover:text-white" },
+                { icon: Mail, href: "mailto:devteotia1511@gmail.com", label: "Email", color: "hover:text-primary-800 dark:hover:text-white" }
                 ].map((social, index) => {
                 const IconComponent = social.icon;
                 return (

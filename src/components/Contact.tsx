@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, MessageCircle, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, MessageCircle, CheckCircle, AlertCircle, Instagram } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -58,10 +58,10 @@ const Contact: React.FC = () => {
   ];
 
   const socialLinks = [
-    { name: 'GitHub', icon: Github, href: '#', color: 'hover:text-gray-900 dark:hover:text-white' },
-    { name: 'LinkedIn', icon: Linkedin, href: '#', color: 'hover:text-blue-600' },
-    { name: 'Twitter', icon: Twitter, href: '#', color: 'hover:text-blue-400' },
-    { name: 'Discord', icon: MessageCircle, href: '#', color: 'hover:text-purple-600' }
+    { name: 'GitHub', icon: Github, href: 'https://github.com/devteotia1511', color: 'hover:text-gray-900 dark:hover:text-white' },
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/dev-teotia-62297928b/', color: 'hover:text-blue-600 dark:hover:text-white' },
+    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/devteotia_1511', color: 'hover:text-red-400 dark:hover:text-white' },
+    { name: 'Email', icon: Mail, href: 'mailto:devteotia1511@gmail.com', color: 'hover:text-primary-600 dark:hover:text-white' }
   ];
 
   const subjects = [
@@ -142,13 +142,15 @@ const Contact: React.FC = () => {
                     const IconComponent = social.icon;
                     return (
                       <motion.a
-                        key={index}
-                        href={social.href}
-                        className={`p-3 bg-gray-100 dark:bg-dark-800 rounded-xl text-gray-600 dark:text-gray-400 ${social.color} transition-all duration-300`}
-                        whileHover={{ scale: 1.1, y: -2 }}
-                        whileTap={{ scale: 0.9 }}
+                      key={index}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`p-4 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm text-gray-600 dark:text-gray-400 ${social.color} transition-all duration-300 shadow-lg hover:shadow-xl`}
+                      whileHover={{ scale: 1.1, y: -2 }}
+                      whileTap={{ scale: 0.9 }}
                       >
-                        <IconComponent className="w-5 h-5" />
+                      <IconComponent size={24} />
                       </motion.a>
                     );
                   })}

@@ -34,13 +34,13 @@ const Experience: React.FC = () => {
     },
     {
       type: 'education',
-      title: 'Bachelor of Computer Science',
-      company: 'University of Technology',
-      period: '2017 - 2021',
-      description: 'Graduated Magna Cum Laude with focus on Software Engineering and Web Development. Active member of Computer Science Society.',
+      title: 'Bachelor of Technology in Computer Science.',
+      company: 'ABES Engineering College',
+      period: '2022 - 2025',
+      description: 'Graduated Magna Cum Laude with focus on Software Engineering and Web Development. Active member of Computer Science.',
       achievements: [
-        'GPA: 3.8/4.0',
-        'Dean\'s List 6 semesters',
+        'CGPA: 7.3',
+        'Main Lead of the finest & Artistic socity at ABESEC',
         'Led student coding bootcamp'
       ],
       icon: GraduationCap,

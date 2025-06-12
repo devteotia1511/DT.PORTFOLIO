@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, ArrowUp, Github, Linkedin, Twitter, Mail, Code, Coffee } from 'lucide-react';
+import { Heart, ArrowUp, Github, Linkedin, Mail, Code, Coffee, Instagram} from 'lucide-react';
 import { Link } from 'react-scroll';
 
 const Footer: React.FC = () => {
@@ -22,15 +22,11 @@ const Footer: React.FC = () => {
   };
 
   const socialLinks = [
-    { name: 'GitHub', icon: Github, href: '#', color: 'hover:text-gray-900 dark:hover:text-white' },
-    { name: 'LinkedIn', icon: Linkedin, href: '#', color: 'hover:text-blue-600' },
-    { name: 'Twitter', icon: Twitter, href: '#', color: 'hover:text-blue-400' },
-    { name: 'Email', icon: Mail, href: 'mailto:alex.developer@email.com', color: 'hover:text-primary-600' }
+    { name: 'GitHub', icon: Github, href: 'https://github.com/devteotia1511', color: 'hover:text-gray-900 dark:hover:text-white' },
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/dev-teotia-62297928b/', color: 'hover:text-blue-600 dark:hover:text-white' },
+    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/devteotia_1511', color: 'hover:text-red-400 dark:hover:text-white' },
+    { name: 'Email', icon: Mail, href: 'mailto:devteotia1511@gmail.com', color: 'hover:text-primary-600 dark:hover:text-white' }
   ];
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   return (
     <footer className="bg-white dark:bg-dark-900 border-t border-gray-200 dark:border-dark-700 transition-colors duration-300">
@@ -65,12 +61,13 @@ const Footer: React.FC = () => {
                       <motion.a
                         key={index}
                         href={social.href}
-                        className={`p-3 bg-gray-100 dark:bg-dark-800 rounded-xl text-gray-600 dark:text-gray-400 ${social.color} transition-all duration-300`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`p-4 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm text-gray-600 dark:text-gray-400 ${social.color} transition-all duration-300 shadow-lg hover:shadow-xl`}
                         whileHover={{ scale: 1.1, y: -2 }}
                         whileTap={{ scale: 0.9 }}
-                        aria-label={social.name}
                       >
-                        <IconComponent className="w-5 h-5" />
+                        <IconComponent size={24} />
                       </motion.a>
                     );
                   })}
@@ -98,6 +95,7 @@ const Footer: React.FC = () => {
                         spy={true}
                         smooth={true}
                         duration={500}
+                        offset={-70} // Adjust offset for sticky headers
                         className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 cursor-pointer"
                       >
                         {link.name}
@@ -129,13 +127,23 @@ const Footer: React.FC = () => {
 
             {/* Back to Top */}
             <motion.button
-              onClick={scrollToTop}
               className="flex items-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="text-sm font-medium">Back to top</span>
-              <ArrowUp className="w-4 h-4" />
+              
+                  <Link
+                    key="back-to-top"
+                    to="hero"
+                    spy={true}
+                    smooth={true}
+                    duration={500}
+                    className="flex items-center space-x-2"
+                  >
+                    <span className="text-sm font-medium">Back to Top</span>
+                    <ArrowUp className="w-4 h-4" />
+                  </Link>
+                
             </motion.button>
           </div>
         </div>
