@@ -65,6 +65,15 @@ const Languages: React.FC = () => {
       description: 'Demonstrates skills in Kubernetes cluster administration and container orchestration',
       credentialId: 'CKA-2023-007890',
       color: 'from-purple-500 to-purple-600'
+    },
+    {
+      title: 'Deloitte Technology Consulting Virtual Internship',
+      issuer: 'Deloitte (Forage)',
+      date: '2024',
+      status: 'Completed',
+      description: 'Completed a virtual internship simulating real consulting scenarios, including client discovery, tech strategy, and solution prototyping.',
+      credentialId: 'DTC-2024-001122',
+      color: 'from-yellow-500 to-yellow-600'
     }
   ];
 

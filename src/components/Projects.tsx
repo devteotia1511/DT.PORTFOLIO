@@ -6,19 +6,19 @@ const Projects: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedProject, setSelectedProject] = useState<any>(null);
 
-  const categories = ['All', 'Web Apps', 'Mobile', 'APIs', 'Tools'];
+  const categories = ['All', 'Web Apps', 'APIs', 'Tools'];
 
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
+      title: 'ETMS',
       category: 'Web Apps',
-      description: 'Full-stack e-commerce platform with React, Node.js, and Stripe integration',
-      detailedDescription: 'A comprehensive e-commerce solution featuring user authentication, product catalog, shopping cart, payment processing with Stripe, order management, and admin dashboard. Built with modern web technologies ensuring scalability and performance.',
+      description: 'Employee Task Management System',
+      detailedDescription: 'Employee Task Management System is a web-based application designed to help organizations assign, track, and manage employee tasks efficiently. It allows managers to create tasks, set deadlines, assign them to employees, and monitor progress. Employees can view their assigned tasks, update status, and communicate any issues. The system improves productivity, accountability, and transparency within teams. Admin Credentials -> email: ETMS@admin.com, password: 1234567890',
       image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tech: ['React', 'TypeScript', 'Node.js', 'MongoDB', 'Stripe'],
-      githubUrl: '#',
-      liveUrl: '#',
+      tech: ['React', 'JavaScript', 'Spline', 'Tailwind CSS'],
+      githubUrl: 'https://github.com/devteotia1511/ETMS.git',
+      liveUrl: 'https://dtetms.vercel.app/',
       featured: true,
       status: 'Completed'
     },
@@ -29,7 +29,7 @@ const Projects: React.FC = () => {
       description: 'Collaborative task management application with real-time updates',
       detailedDescription: 'A powerful task management tool designed for teams with features like real-time collaboration, drag-and-drop task organization, deadline tracking, file attachments, and detailed analytics. Includes mobile-responsive design and offline capabilities.',
       image: 'https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tech: ['Vue.js', 'Firebase', 'Vuetify', 'PWA'],
+      tech: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase'],
       githubUrl: '#',
       liveUrl: '#',
       featured: false,
@@ -69,7 +69,7 @@ const Projects: React.FC = () => {
       detailedDescription: 'Developer productivity tool that generates boilerplate code for various frameworks and libraries. Features template customization, project scaffolding, and integration with popular development workflows.',
       image: 'https://images.pexels.com/photos/270360/pexels-photo-270360.jpeg?auto=compress&cs=tinysrgb&w=800',
       tech: ['Node.js', 'Commander.js', 'Inquirer', 'Templates'],
-      githubUrl: '#',
+      githubUrl: 'https://github.com/devteotia1511/CODEGEN_CLI.git',
       liveUrl: '#',
       featured: false,
       status: 'In Progress'
@@ -85,6 +85,19 @@ const Projects: React.FC = () => {
       githubUrl: '#',
       liveUrl: '#',
       featured: true,
+      status: 'Completed'
+    },
+    {
+      id: 7,
+      title: 'Practice Projects',
+      category: 'Web Apps',
+      description: 'Practice projects to improve my skills',
+      detailedDescription: 'Collection of Projects like Color Game, Display cards, Survey Forms, BMI Calculator, Guess The Number Game, Task Reminder, etc.',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4QfBJtdpF77K-Ga3S5LcN-KQUI6Dp2kWOFA&s',
+      tech: ['HTML', 'CSS', 'JS'],
+      githubUrl: 'https://github.com/devteotia1511/Practice_projects.git',
+      liveUrl: 'https://dtpractice-projects.vercel.app/',
+      featured: false,
       status: 'Completed'
     }
   ];

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code, Database, Globe, Palette, Server, Smartphone, PenTool as Tool, Zap } from 'lucide-react';
+import { Code, Database, Palette, Server, PenTool as Tool, Zap } from 'lucide-react';
 
 const Skills: React.FC = () => {
   const skillCategories = [
@@ -10,10 +10,8 @@ const Skills: React.FC = () => {
       color: 'from-red-500 to-red-600',
       skills: [
         { name: 'React/Next.js', level: 95 },
-        { name: 'TypeScript', level: 90 },
+        { name: 'JavaScript/TypeScript', level: 90 },
         { name: 'Tailwind CSS', level: 92 },
-        { name: 'Vue.js', level: 85 },
-        { name: 'Sass/SCSS', level: 88 }
       ]
     },
     {
@@ -22,10 +20,9 @@ const Skills: React.FC = () => {
       color: 'from-rose-500 to-rose-600',
       skills: [
         { name: 'Node.js', level: 90 },
-        { name: 'Python/Django', level: 85 },
+        { name: 'Python/Flask', level: 85 },
         { name: 'Express.js', level: 88 },
-        { name: 'GraphQL', level: 80 },
-        { name: 'REST APIs', level: 93 }
+        { name: 'GraphQL', level: 80 }
       ]
     },
     {
@@ -35,9 +32,8 @@ const Skills: React.FC = () => {
       skills: [
         { name: 'MongoDB', level: 87 },
         { name: 'PostgreSQL', level: 85 },
-        { name: 'AWS', level: 80 },
-        { name: 'Firebase', level: 90 },
-        { name: 'Docker', level: 75 }
+        { name: 'Supabase', level: 80 },
+        { name: 'Firebase', level: 80 }
       ]
     },
     {

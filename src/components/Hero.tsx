@@ -121,7 +121,7 @@ const Hero: React.FC = () => {
                 {/* Image Container with Cutout */}
                 <div className="relative w-full h-full overflow-hidden rounded-[3rem] bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900">
                   <img
-                    src="./profile.jpg"
+                    src="./Profile_pic.jpg"
                     alt="Professional Portrait"
                     className="w-full h-full object-cover object-center"
                   />

@@ -6,13 +6,14 @@ const Experience: React.FC = () => {
   const experiences = [
     {
       type: 'work',
-      title: 'Senior Frontend Developer',
-      company: 'TechCorp Solutions',
-      period: '2022 - Present',
-      description: 'Led development of responsive web applications using React and TypeScript. Collaborated with cross-functional teams to deliver high-quality user experiences.',
+      title: 'Frontend Developer Intern',
+      company: 'ParKSmart Technologies Pvt. Ltd.',
+      period: 'July 2025 - Present',
+      description: 'Spearheaded the creation of an intuitive admin panel for smart parking systems, leveraging React and TypeScript to build dynamic dashboards and streamline user management. Actively collaborated across teams to deliver responsive, data driven interfaces aligned with real-time operational needs.',
       achievements: [
-        'Increased application performance by 40%',
-        'Mentored 3 junior developers',
+        'Revamped mobile layouts and ensured WCAG-compliant accessibility for an inclusive user experience',
+        'Optimized component rendering, resulting in smoother UI interactions',
+        'Integrated third-party APIs to enhance user functionality and data visualization',
         'Led migration to TypeScript'
       ],
       icon: Building,
@@ -21,13 +22,13 @@ const Experience: React.FC = () => {
     {
       type: 'work',
       title: 'Full-Stack Developer',
-      company: 'StartupXYZ',
-      period: '2021 - 2022',
-      description: 'Developed and maintained full-stack applications using React, Node.js, and MongoDB. Implemented RESTful APIs and database optimization.',
+      company: 'Samvaad Theatre & Film Group',
+      period: 'Sept 2024 - Feb 2025',
+      description: 'Engineered custom digital solutions to support theatrical and film initiatives, focusing on automating registration flows, project tracking, and media coordination. Delivered reliable full-stack systems that enhanced collaboration across departments using modern web technologies.',
       achievements: [
-        'Built 5+ production applications',
-        'Reduced server response time by 60%',
-        'Implemented CI/CD pipelines'
+        'Created a robust event and content management system for cross-functional teams',
+        'Streamlined project timelines and asset sharing through a unified platform',
+        'Improved registration and scheduling efficiency for multiple productions'
       ],
       icon: Building,
       color: 'from-emerald-500 to-emerald-700'
@@ -36,8 +37,8 @@ const Experience: React.FC = () => {
       type: 'education',
       title: 'Bachelor of Technology in Computer Science.',
       company: 'ABES Engineering College',
-      period: '2022 - 2025',
-      description: 'Graduated Magna Cum Laude with focus on Software Engineering and Web Development. Active member of Computer Science.',
+      period: '2022 - 2026',
+      description: "Pursuing a Bachelor's degree in Computer Science with a strong emphasis on Software Engineering and Web Development. Actively involved in technical communities and student-led initiatives.",
       achievements: [
         'CGPA: 7.3',
         'Main Lead of the finest & Artistic socity at ABESEC',

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart, ArrowUp, Github, Linkedin, Mail, Code, Coffee, Instagram} from 'lucide-react';
-import { Link } from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -22,11 +22,15 @@ const Footer: React.FC = () => {
   };
 
   const socialLinks = [
-    { name: 'GitHub', icon: Github, href: 'https://github.com/devteotia1511', color: 'hover:text-gray-900 dark:hover:text-white' },
-    { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/dev-teotia-62297928b/', color: 'hover:text-blue-600 dark:hover:text-white' },
-    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/devteotia_1511', color: 'hover:text-red-400 dark:hover:text-white' },
-    { name: 'Email', icon: Mail, href: 'mailto:devteotia1511@gmail.com', color: 'hover:text-primary-600 dark:hover:text-white' }
+    { name: 'GitHub', icon: Github, href: 'https://github.com/devteotia1511' },
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/dev-teotia-62297928b/' },
+    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/devteotia_1511' },
+    { name: 'Email', icon: Mail, href: 'mailto:devteotia1511@gmail.com' }
   ];
+
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <footer className="bg-white dark:bg-dark-900 border-t border-gray-200 dark:border-dark-700 transition-colors duration-300">
@@ -54,7 +58,7 @@ const Footer: React.FC = () => {
                 </p>
                 
                 {/* Social Links */}
-                <div className="flex space-x-4">
+                <div className="flex space-x-3 sm:space-x-4">
                   {socialLinks.map((social, index) => {
                     const IconComponent = social.icon;
                     return (
@@ -63,11 +67,15 @@ const Footer: React.FC = () => {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`p-4 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm text-gray-600 dark:text-gray-400 ${social.color} transition-all duration-300 shadow-lg hover:shadow-xl`}
+                        className="p-3 sm:p-4 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm text-gray-600 dark:text-gray-400 transition-all duration-300 shadow-lg hover:shadow-xl active:scale-95 min-w-[48px] min-h-[48px] flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-700"
                         whileHover={{ scale: 1.1, y: -2 }}
                         whileTap={{ scale: 0.9 }}
+                        aria-label={`Visit ${social.name}`}
                       >
-                        <IconComponent size={24} />
+                        <IconComponent 
+                          size={20} 
+                          className="sm:w-6 sm:h-6 hover:text-blue-600 dark:hover:text-white transition-colors duration-300" 
+                        />
                       </motion.a>
                     );
                   })}
@@ -84,22 +92,23 @@ const Footer: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
               >
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-4">
+                <h3 className="font-semibold text-gray-900 dark:text-white mb-4 text-lg">
                   {category}
                 </h3>
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   {links.map((link, index) => (
                     <li key={index}>
-                      <Link
+                      <ScrollLink
                         to={link.to}
                         spy={true}
                         smooth={true}
-                        duration={500}
-                        offset={-70} // Adjust offset for sticky headers
-                        className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 cursor-pointer"
+                        duration={800}
+                        offset={-80}
+                        className="w-full text-left text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 cursor-pointer block py-2 px-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50 active:scale-95 min-h-[44px] flex items-center text-base sm:text-sm"
+                        aria-label={`Navigate to ${link.name} section`}
                       >
                         {link.name}
-                      </Link>
+                      </ScrollLink>
                     </li>
                   ))}
                 </ul>
@@ -117,7 +126,7 @@ const Footer: React.FC = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="flex items-center text-gray-600 dark:text-gray-300"
+              className="flex items-center text-gray-600 dark:text-gray-300 text-sm sm:text-base"
             >
               <span>© {currentYear} Dev Teotia. Made with</span>
               <Heart className="w-4 h-4 text-red-500 mx-1 animate-pulse" />
@@ -127,23 +136,14 @@ const Footer: React.FC = () => {
 
             {/* Back to Top */}
             <motion.button
-              className="flex items-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
-              whileHover={{ y: -2 }}
+              onClick={handleScrollToTop}
+              whileHover={{ y: -2, scale: 1.02 }}
               whileTap={{ scale: 0.95 }}
+              className="flex items-center justify-center sm:justify-start space-x-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 bg-gray-50 dark:bg-gray-800/50 hover:bg-gray-100 dark:hover:bg-gray-700/50 rounded-lg px-4 py-3 sm:px-3 sm:py-2 min-h-[44px] w-full sm:w-auto text-sm font-medium shadow-sm hover:shadow-md"
+              aria-label="Back to top of page"
             >
-              
-                  <Link
-                    key="back-to-top"
-                    to="hero"
-                    spy={true}
-                    smooth={true}
-                    duration={500}
-                    className="flex items-center space-x-2"
-                  >
-                    <span className="text-sm font-medium">Back to Top</span>
-                    <ArrowUp className="w-4 h-4" />
-                  </Link>
-                
+              <span>Back to Top</span>
+              <ArrowUp className="w-4 h-4" />
             </motion.button>
           </div>
         </div>
@@ -156,7 +156,7 @@ const Footer: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center py-4 border-t border-gray-100 dark:border-dark-800"
         >
-          <p className="text-xs text-gray-500 dark:text-gray-400">
+          <p className="text-xs text-gray-500 dark:text-gray-400 px-4">
             "Code is poetry written in logic" - Built with React, TypeScript & Tailwind CSS
           </p>
         </motion.div>
