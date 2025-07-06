@@ -33,7 +33,7 @@ const Languages: React.FC = () => {
     {
       title: 'Google Cloud Professional Developer',
       issuer: 'Google Cloud',
-      date: '2023',
+      date: '2024',
       status: 'Active',
       description: 'Validates skills in building scalable and reliable applications using Google Cloud Platform',
       credentialId: 'GCP-PD-2023-005678',
@@ -42,7 +42,7 @@ const Languages: React.FC = () => {
     {
       title: 'Meta Front-End Developer',
       issuer: 'Meta (Facebook)',
-      date: '2022',
+      date: '2025',
       status: 'Active',
       description: 'Professional certificate covering React, responsive design, and modern development practices',
       credentialId: 'META-FE-2022-009012',
@@ -51,7 +51,7 @@ const Languages: React.FC = () => {
     {
       title: 'Microsoft Azure Fundamentals',
       issuer: 'Microsoft',
-      date: '2022',
+      date: '2025',
       status: 'Active',
       description: 'Foundation level understanding of Azure services and cloud computing concepts',
       credentialId: 'AZ-900-2022-003456',
@@ -60,7 +60,7 @@ const Languages: React.FC = () => {
     {
       title: 'Certified Kubernetes Administrator',
       issuer: 'Cloud Native Computing Foundation',
-      date: '2023',
+      date: '2024',
       status: 'Active',
       description: 'Demonstrates skills in Kubernetes cluster administration and container orchestration',
       credentialId: 'CKA-2023-007890',
@@ -69,7 +69,7 @@ const Languages: React.FC = () => {
     {
       title: 'Deloitte Technology Consulting Virtual Internship',
       issuer: 'Deloitte (Forage)',
-      date: '2024',
+      date: '2025',
       status: 'Completed',
       description: 'Completed a virtual internship simulating real consulting scenarios, including client discovery, tech strategy, and solution prototyping.',
       credentialId: 'HPHiavuicEt8YMuyA',
@@ -288,7 +288,7 @@ const Languages: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              View All Credentials
+              Equipped for the Future of Work
             </motion.button>
           </div>
         </motion.div>
