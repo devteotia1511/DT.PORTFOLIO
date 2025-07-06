@@ -13,7 +13,7 @@ const About: React.FC = () => {
     {
       icon: Heart,
       title: "Interests & Hobbies", 
-      description: "When not coding, I enjoy photography, hiking, reading tech blogs, and contributing to open-source projects. I believe in work-life balance.",
+      description: "When not coding, I enjoy Acting, Exploring theatre world, connecting with people, and Enjoy the beauty of world. I believe in work-life balance.",
       color: "from-pink-500 to-pink-700"
     },
     {
@@ -31,7 +31,7 @@ const About: React.FC = () => {
     {
       icon: Users,
       title: "Collaboration",
-      description: "Strong believer in teamwork and knowledge sharing. I enjoy mentoring junior developers and contributing to team success.",
+      description: "Strong believer in teamwork and knowledge sharing. I enjoy taking mentorship from seniors and mentoring junior developers and contributing to team success.",
       color: "from-pink-600 to-purple-600"
     },
     {
