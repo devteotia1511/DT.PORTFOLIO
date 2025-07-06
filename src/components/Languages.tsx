@@ -72,7 +72,7 @@ const Languages: React.FC = () => {
       date: '2024',
       status: 'Completed',
       description: 'Completed a virtual internship simulating real consulting scenarios, including client discovery, tech strategy, and solution prototyping.',
-      credentialId: 'DTC-2024-001122',
+      credentialId: 'HPHiavuicEt8YMuyA',
       color: 'from-yellow-500 to-yellow-600'
     }
   ];
@@ -238,7 +238,7 @@ const Languages: React.FC = () => {
                     {cert.description}
                   </p>
 
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-dark-700">
+                  {/* /<div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-dark-700">
                     <div className="text-xs text-gray-500 dark:text-gray-400">
                       <span className="font-medium">ID:</span> {cert.credentialId}
                     </div>
@@ -260,7 +260,7 @@ const Languages: React.FC = () => {
                         <ExternalLink className="w-4 h-4" />
                       </motion.button>
                     </div>
-                  </div>
+                  </div> */}
                 </motion.div>
               ))}
             </motion.div>
