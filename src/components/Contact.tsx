@@ -1,36 +1,64 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, MessageCircle, CheckCircle, AlertCircle, Instagram } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  Github,
+  Linkedin,
+  CheckCircle,
+  AlertCircle,
+  Instagram,
+} from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+  
+    const serviceId = 'service_u0qaw8l';
+    const templateId = 'template_fwdt1do';
+    const publicKey = 'EUg2gvIA7fhspI4jF';
+  
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+      time: new Date().toLocaleString(), // optional
+    };
+  
+    try {
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
-      
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
       setTimeout(() => setSubmitStatus('idle'), 5000);
-    }, 2000);
+    }
   };
 
   const contactInfo = [
@@ -38,30 +66,50 @@ const Contact: React.FC = () => {
       icon: Mail,
       title: 'Email',
       value: 'devteotia1511@gmail.com',
-      href: 'mailto:devteotia1511@gamil.com',
-      color: 'from-cyan-300 to-cyan-500'
+      href: 'mailto:devteotia1511@gmail.com',
+      color: 'from-cyan-300 to-cyan-500',
     },
     {
       icon: Phone,
       title: 'Phone',
       value: '+91 9311031192',
       href: 'tel:+919311031192',
-      color: 'from-sky-300 to-sky-500'
+      color: 'from-sky-300 to-sky-500',
     },
     {
       icon: MapPin,
       title: 'Location',
       value: 'Delhi NCR, Uttar Pradesh, India',
       href: '#',
-      color: 'from-blue-300 to-blue-500'
-    }
+      color: 'from-blue-300 to-blue-500',
+    },
   ];
 
   const socialLinks = [
-    { name: 'GitHub', icon: Github, href: 'https://github.com/devteotia1511', color: 'hover:text-gray-900 dark:hover:text-white' },
-    { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/dev-teotia-62297928b/', color: 'hover:text-blue-600 dark:hover:text-white' },
-    { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/devteotia_1511', color: 'hover:text-red-400 dark:hover:text-white' },
-    { name: 'Email', icon: Mail, href: 'mailto:devteotia1511@gmail.com', color: 'hover:text-primary-600 dark:hover:text-white' }
+    {
+      name: 'GitHub',
+      icon: Github,
+      href: 'https://github.com/devteotia1511',
+      color: 'hover:text-gray-900 dark:hover:text-white',
+    },
+    {
+      name: 'LinkedIn',
+      icon: Linkedin,
+      href: 'https://www.linkedin.com/in/dev-teotia-62297928b/',
+      color: 'hover:text-blue-600 dark:hover:text-white',
+    },
+    {
+      name: 'Instagram',
+      icon: Instagram,
+      href: 'https://www.instagram.com/devteotia_1511',
+      color: 'hover:text-red-400 dark:hover:text-white',
+    },
+    {
+      name: 'Email',
+      icon: Mail,
+      href: 'mailto:devteotia1511@gmail.com',
+      color: 'hover:text-primary-600 dark:hover:text-white',
+    },
   ];
 
   const subjects = [
@@ -70,7 +118,7 @@ const Contact: React.FC = () => {
     'Job Opportunity',
     'Consulting',
     'Speaking Engagement',
-    'Other'
+    'Other',
   ];
 
   return (
@@ -84,10 +132,14 @@ const Contact: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            Get In <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">Touch</span>
+            Get In{' '}
+            <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
+              Touch
+            </span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Ready to start your next project? I'd love to hear from you. Send me a message and I'll respond as soon as possible.
+            Ready to start your next project? I'd love to hear from you. Send me a message and I'll
+            respond as soon as possible.
           </p>
         </motion.div>
 
@@ -101,11 +153,8 @@ const Contact: React.FC = () => {
             className="lg:col-span-1"
           >
             <div className="bg-white dark:bg-dark-900 rounded-2xl p-8 shadow-xl border border-gray-200 dark:border-dark-700 h-fit">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
-                Let's Connect
-              </h3>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Let's Connect</h3>
 
-              {/* Contact Info */}
               <div className="space-y-6 mb-8">
                 {contactInfo.map((info, index) => {
                   const IconComponent = info.icon;
@@ -120,9 +169,7 @@ const Contact: React.FC = () => {
                         <IconComponent className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
-                          {info.title}
-                        </p>
+                        <p className="text-sm font-medium text-gray-500 dark:text-gray-400">{info.title}</p>
                         <p className="text-gray-900 dark:text-white font-medium group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
                           {info.value}
                         </p>
@@ -132,32 +179,28 @@ const Contact: React.FC = () => {
                 })}
               </div>
 
-              {/* Social Links */}
               <div>
-                <h4 className="font-semibold text-gray-900 dark:text-white mb-4">
-                  Follow Me
-                </h4>
+                <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Follow Me</h4>
                 <div className="flex space-x-4">
                   {socialLinks.map((social, index) => {
                     const IconComponent = social.icon;
                     return (
                       <motion.a
-                      key={index}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`p-4 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm text-gray-600 dark:text-gray-400 ${social.color} transition-all duration-300 shadow-lg hover:shadow-xl`}
-                      whileHover={{ scale: 1.1, y: -2 }}
-                      whileTap={{ scale: 0.9 }}
+                        key={index}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`p-4 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm text-gray-600 dark:text-gray-400 ${social.color} transition-all duration-300 shadow-lg hover:shadow-xl`}
+                        whileHover={{ scale: 1.1, y: -2 }}
+                        whileTap={{ scale: 0.9 }}
                       >
-                      <IconComponent size={24} />
+                        <IconComponent size={24} />
                       </motion.a>
                     );
                   })}
                 </div>
               </div>
 
-              {/* Availability Status */}
               <div className="mt-8 p-4 bg-green-50 dark:bg-green-900/20 rounded-xl border border-green-200 dark:border-green-800">
                 <div className="flex items-center space-x-2">
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
@@ -170,19 +213,10 @@ const Contact: React.FC = () => {
           </motion.div>
 
           {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-2"
-          >
+          <div className="lg:col-span-2 relative z-50">
             <div className="bg-white dark:bg-dark-900 rounded-2xl p-8 shadow-xl border border-gray-200 dark:border-dark-700">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
-                Send Message
-              </h3>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Send Message</h3>
 
-              {/* Success/Error Messages */}
               {submitStatus === 'success' && (
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
@@ -203,9 +237,7 @@ const Contact: React.FC = () => {
                   className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl flex items-center space-x-2"
                 >
                   <AlertCircle className="w-5 h-5 text-red-600" />
-                  <span className="text-red-800 dark:text-red-400">
-                    Failed to send message. Please try again.
-                  </span>
+                  <span className="text-red-800 dark:text-red-400">Failed to send message. Please try again.</span>
                 </motion.div>
               )}
 
@@ -222,7 +254,7 @@ const Contact: React.FC = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-dark-600 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent bg-white dark:bg-dark-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-300"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-dark-600 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent bg-white dark:bg-dark-800 text-gray-900 dark:text-white"
                       placeholder="Your full name"
                     />
                   </div>
@@ -238,7 +270,7 @@ const Contact: React.FC = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-dark-600 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent bg-white dark:bg-dark-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-300"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-dark-600 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent bg-white dark:bg-dark-800 text-gray-900 dark:text-white"
                       placeholder="your.email@example.com"
                     />
                   </div>
@@ -253,7 +285,7 @@ const Contact: React.FC = () => {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-dark-600 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent bg-white dark:bg-dark-800 text-gray-900 dark:text-white transition-all duration-300"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-dark-600 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent bg-white dark:bg-dark-800 text-gray-900 dark:text-white"
                   >
                     <option value="">Select a subject</option>
                     {subjects.map((subject) => (
@@ -275,7 +307,7 @@ const Contact: React.FC = () => {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-dark-600 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent bg-white dark:bg-dark-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-300 resize-none"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-dark-600 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent bg-white dark:bg-dark-800 text-gray-900 dark:text-white resize-none"
                     placeholder="Tell me about your project or inquiry..."
                   />
                 </div>
@@ -302,7 +334,7 @@ const Contact: React.FC = () => {
                 </motion.button>
               </form>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
