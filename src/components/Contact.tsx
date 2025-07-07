@@ -245,7 +245,7 @@ const Contact: React.FC = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      Name *
+                      Your Name *
                     </label>
                     <input
                       type="text"
@@ -261,7 +261,7 @@ const Contact: React.FC = () => {
 
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      Email *
+                      Your Email *
                     </label>
                     <input
                       type="email"
