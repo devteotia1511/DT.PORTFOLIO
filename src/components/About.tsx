@@ -117,37 +117,7 @@ const About: React.FC = () => {
             );
           })}
         </motion.div>
-
-        {/* Stats Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-20 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700"
-        >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {[
-              { number: "1+", label: "Years Experience" },
-              { number: "25+", label: "Projects Completed" },
-              { number: "15+", label: "Technologies" },
-              { number: "100%", label: "Client Satisfaction" }
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ scale: 1.05 }}
-                className="group"
-              >
-                <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2 font-montserrat">
-                  {stat.number}
-                </div>
-                <div className="text-gray-600 dark:text-gray-300 font-medium">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+        
       </div>
     </section>
   );
