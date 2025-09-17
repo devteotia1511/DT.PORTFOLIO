@@ -22,15 +22,6 @@ const Languages: React.FC = () => {
 
   const certifications = [
     {
-      title: 'AWS Certified Solutions Architect',
-      issuer: 'Amazon Web Services',
-      date: '2023',
-      status: 'Active',
-      description: 'Professional level certification demonstrating expertise in designing distributed systems on AWS',
-      credentialId: 'AWS-CSA-2023-001234',
-      color: 'from-orange-500 to-orange-600'
-    },
-    {
       title: 'Google Cloud Professional Developer',
       issuer: 'Google Cloud',
       date: '2024',
@@ -47,24 +38,6 @@ const Languages: React.FC = () => {
       description: 'Professional certificate covering React, responsive design, and modern development practices',
       credentialId: 'META-FE-2022-009012',
       color: 'from-blue-600 to-purple-600'
-    },
-    {
-      title: 'Microsoft Azure Fundamentals',
-      issuer: 'Microsoft',
-      date: '2025',
-      status: 'Active',
-      description: 'Foundation level understanding of Azure services and cloud computing concepts',
-      credentialId: 'AZ-900-2022-003456',
-      color: 'from-blue-500 to-blue-700'
-    },
-    {
-      title: 'Certified Kubernetes Administrator',
-      issuer: 'Cloud Native Computing Foundation',
-      date: '2024',
-      status: 'Active',
-      description: 'Demonstrates skills in Kubernetes cluster administration and container orchestration',
-      credentialId: 'CKA-2023-007890',
-      color: 'from-purple-500 to-purple-600'
     },
     {
       title: 'Deloitte Technology Consulting Virtual Internship',

@@ -6,17 +6,17 @@ const Projects: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedProject, setSelectedProject] = useState<any>(null);
 
-  const categories = ['All', 'Web Apps', 'APIs', 'Tools'];
+  const categories = ['All', 'Web Apps', 'API', 'Tools'];
 
   const projects = [
     {
       id: 1,
-      title: 'ETMS',
+      title: 'Employee Task Management System',
       category: 'Web Apps',
-      description: 'Employee Task Management System',
+      description: 'A web app that helps managers assign and track tasks while enabling employees to update progress—improving productivity, accountability, and team collaboration.',
       detailedDescription: 'Employee Task Management System is a web-based application designed to help organizations assign, track, and manage employee tasks efficiently. It allows managers to create tasks, set deadlines, assign them to employees, and monitor progress. Employees can view their assigned tasks, update status, and communicate any issues. The system improves productivity, accountability, and transparency within teams. Admin Credentials -> email: ETMS@admin.com, password: 1234567890',
       image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tech: ['React', 'JavaScript', 'Spline', 'Tailwind CSS'],
+      tech: ['React', 'JavaScript', 'Spline', 'Tailwind CSS', 'ShadCN'],
       githubUrl: 'https://github.com/devteotia1511/ETMS.git',
       liveUrl: 'https://dtetms.vercel.app/',
       featured: true,
@@ -24,71 +24,97 @@ const Projects: React.FC = () => {
     },
     {
       id: 2,
-      title: 'Task Management App',
+      title: 'Consistency Tracker App',
       category: 'Web Apps',
-      description: 'Collaborative task management application with real-time updates',
-      detailedDescription: 'A powerful task management tool designed for teams with features like real-time collaboration, drag-and-drop task organization, deadline tracking, file attachments, and detailed analytics. Includes mobile-responsive design and offline capabilities.',
+      description: 'A simple app to build and track daily Schedules, helping you stay consistent and achieve your goals',
+      detailedDescription: 'BeConsistent is a simple web app that helps users plan and track their daily schedules. It’s designed to encourage consistency, improve productivity, and make it easier to stay focused on personal and professional goals.',
       image: 'https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tech: ['React', 'TypeScript', 'Tailwind CSS', 'Supabase'],
-      githubUrl: '#',
-      liveUrl: '#',
+      tech: ['Next', 'TypeScript', 'Tailwind CSS', 'Firebase', 'MongoDB'],
+      githubUrl: 'https://github.com/devteotia1511/beconsistent.git',
+      liveUrl: 'https://bconsistent.netlify.app/',
       featured: false,
       status: 'Completed'
     },
     {
       id: 3,
-      title: 'Weather Mobile App',
-      category: 'Mobile',
-      description: 'Cross-platform weather app with location-based forecasts',
-      detailedDescription: 'Native mobile application providing accurate weather forecasts with geolocation services, interactive maps, weather alerts, and beautiful UI animations. Features offline data caching and multiple location support.',
-      image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tech: ['React Native', 'Redux', 'Weather API', 'Maps'],
-      githubUrl: '#',
-      liveUrl: '#',
+      title: 'Brand Business Dashboard',
+      category: 'Web Apps',
+      description: 'Brand Business Dashboard provides a sleek interface for tracking sales, performance metrics, and customer insights—empowering brands to make data-driven decisions and visualize growth at a glance.',
+      detailedDescription: 'This Initiative is a web-based Brand Business Dashboard designed to unify critical business data in one place. It offers customizable visualizations for performance metrics, intuitive sales tracking, and customer behavior insights. With real-time updates and easy navigation, brands can monitor growth trends, identify opportunities, and streamline decision-making—all through a clean, responsive interface tailored for both managers and stakeholders. Credentials:- Email: business@name.com, Password: 12345',
+      image: 'https://strapi.biuwer.com/uploads/biuwer_full_internet_sales_dashboard_f861cc9693.png',
+      tech: ['Next.js', 'JavaScript', 'CSS', 'Tailwind CSS', 'Node.js/npm'],
+      githubUrl: 'https://github.com/devteotia1511/Parksmartproject1.git',
+      liveUrl: 'https://parksmartprojectnew.netlify.app/login',
       featured: true,
       status: 'Completed'
     },
     {
       id: 4,
-      title: 'REST API Gateway',
-      category: 'APIs',
-      description: 'Scalable API gateway with authentication and rate limiting',
-      detailedDescription: 'Enterprise-grade API gateway solution with JWT authentication, rate limiting, request/response transformation, API versioning, monitoring, and comprehensive logging. Built for high-traffic applications with microservices architecture.',
-      image: 'https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tech: ['Node.js', 'Express', 'Redis', 'JWT', 'Docker'],
-      githubUrl: '#',
+      title: 'Automation_IG',
+      category: 'Web Apps',
+      description: 'Automation_IG is a Python-based system that auto-posts Instagram Reels every 20 minutes, generating captions and thumbnails—for content creators and marketers seeking hands-off content scheduling.',
+      detailedDescription: 'Automation_IG automates the posting of Instagram Reels using Python and Meta’s Graph API. Every 20 minutes it uploads a reel from local storage, auto-generates thumbnails and captions, and handles everything via a scheduler without manual intervention. It’s ideal for content creators and marketing pages aiming to keep their feed fresh, consistent, and engaging while minimizing effort.',
+      image: 'https://www.interakt.shop/wp-content/uploads/2025/02/How-to-Automate-Your-Instagram-Strategy-Without-Violating-Rules.png',
+      tech: ['Python', 'Meta Graph API', 'Scheduler/Cron/Time Module', 'OS & File Handling'],
+      githubUrl: 'https://github.com/devteotia1511/Automation_IG.git',
+      liveUrl: '#',
+      featured: true,
+      status: 'Completed'
+    },
+    {
+      id: 5,
+      title: 'Video Cutter',
+      category: 'Web Apps',
+      description: 'A tool to quickly cut long videos into short clips for easy sharing.',
+      detailedDescription: 'A Python-based video shortener that automatically splits long videos into customizable clips (e.g. 30–40 seconds), making it easy for creators to repurpose content for Instagram Reels, YouTube Shorts, and more.',
+      image: 'https://www.adoreshare.com/images/products/key-feature/quick-video-cutter/key-1.jpg',
+      tech: ['HTML', 'Python', 'Flask', 'JavaScript', 'CSS', 'File System'],
+      githubUrl: 'https://github.com/devteotia1511/Video_Cutter.git',
       liveUrl: '#',
       featured: false,
       status: 'Completed'
     },
     {
-      id: 5,
+      id: 6,
+      title: 'Parking-spots',
+      category: 'Web Apps',
+      description: 'Parking-Spots is a Next.js app tracking available parking slots via a dynamic UI. Users can view spot availability in real-time and manage reservations seamlessly.',
+      detailedDescription: 'Parking-Spots is a responsive web application built with Next.js, TypeScript, and Tailwind CSS. It visualizes parking space availability, offers a clean interface to monitor open and occupied spots, and enables users to reserve or free spots in real time. Designed for parking management in residential or commercial areas, it simplifies allocation and improves efficiency.',
+      image: 'https://images.squarespace-cdn.com/content/v1/54f7c017e4b0ceb22a706c44/1470743704404-IMZ4NYOPO3JYKGRL5L3A/ke17ZwdGBToddI8pDm48kDzr_xzGYealx4kUY43NSpcUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcH-p8aITKm1gTVLW7iMqFdoYAMjsuZ3UqButZ8HFhBcAFoboque91MA4BQJN416vk/image-asset.jpeg?format=original',
+      tech: ['Next.js', 'Typescript', 'CSS', 'Tailwind CSS', 'Filters'],
+      githubUrl: 'https://github.com/devteotia1511/Parking-Spots.git',
+      liveUrl: 'https://parking-spots.netlify.app',
+      featured: false,
+      status: 'Completed'
+    },
+    {
+      id: 7,
       title: 'Code Generator CLI',
       category: 'Tools', 
       description: 'Command-line tool for generating boilerplate code',
       detailedDescription: 'Developer productivity tool that generates boilerplate code for various frameworks and libraries. Features template customization, project scaffolding, and integration with popular development workflows.',
       image: 'https://images.pexels.com/photos/270360/pexels-photo-270360.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tech: ['Node.js', 'Commander.js', 'Inquirer', 'Templates'],
+      tech: ['Node.js', 'Commander.js', 'Inquirer', 'Templates', 'Express.js', 'Figlet'],
       githubUrl: 'https://github.com/devteotia1511/CODEGEN_CLI.git',
       liveUrl: '#',
       featured: false,
       status: 'In Progress'
     },
     {
-      id: 6,
-      title: 'Social Media Dashboard',
+      id: 8,
+      title: 'Synced-Products',
       category: 'Web Apps',
-      description: 'Analytics dashboard for social media management',
-      detailedDescription: 'Comprehensive social media management platform with multi-platform integration, content scheduling, analytics reporting, engagement tracking, and team collaboration features. Includes real-time notifications and customizable dashboards.',
-      image: 'https://images.pexels.com/photos/267389/pexels-photo-267389.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tech: ['React', 'D3.js', 'Express', 'PostgreSQL', 'Social APIs'],
-      githubUrl: '#',
-      liveUrl: '#',
-      featured: true,
+      description: 'Synced-Products is a Next.js web app with Myntra-style filters, product search, cart options, and a Todo page. It also shows random news via API.',
+      detailedDescription: 'Synced-Products is a feature-rich Next.js application that mimics an e-commerce experience. It offers product exploration with advanced filters (brand, price, color, discount), search functionality, and cart actions. Alongside the shopping interface, it includes a Todo page to manage tasks and displays random news fetched from an API. The responsive design ensures a smooth experience across devices.',
+      image: 'https://paid.com/wp-content/uploads/2024/10/AdobeStock_234707797-scaled.jpeg',
+      tech: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'API Integration', 'Zustand/State Management'],
+      githubUrl: 'https://github.com/devteotia1511/CODEGEN_CLI.git',
+      liveUrl: 'https://synced-products.vercel.app',
+      featured: false,
       status: 'Completed'
     },
     {
-      id: 7,
+      id: 9,
       title: 'Practice Projects',
       category: 'Web Apps',
       description: 'Practice projects to improve my skills',
@@ -244,7 +270,7 @@ const Projects: React.FC = () => {
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">
                       {project.title}
                     </h3>
-                    <span className="text-xs font-medium text-orange-600 dark:text-orange-400 bg-orange-100 dark:bg-orange-900/30 px-2 py-1 rounded-full">
+                    <span className="text-xs font-medium text-orange-600 dark:text-orange-400 bg-orange-100 dark:bg-orange-900/30 px-2 py-2 rounded-2xl">
                       {project.category}
                     </span>
                   </div>
