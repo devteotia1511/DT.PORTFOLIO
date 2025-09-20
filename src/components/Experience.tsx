@@ -23,8 +23,8 @@ const Experience: React.FC = () => {
       type: 'work',
       title: 'Full-Stack Developer',
       company: 'Samvaad Theatre & Film Group',
-      period: 'Sept 2024 - Feb 2025',
-      description: 'Engineered custom digital solutions to support theatrical and film initiatives, focusing on automating registration flows, project tracking, and media coordination. Delivered reliable full-stack systems that enhanced collaboration across departments using modern web technologies.',
+      period: 'Dec 2024 - Feb 2025',
+      description: 'I worked on the full stack development of Samvaad, a theatre group&apos;s official website. My responsibilities included designing the frontend for a responsive and engaging user experience, as well as developing and integrating backend functionalities to manage content and data efficiently. I handled the complete development cycle, ensuring smooth performance, scalability, and a platform that effectively showcases the group&apos;s productions, events, and achievements.',
       achievements: [
         'Created a robust event and content management system for cross-functional teams',
         'Streamlined project timelines and asset sharing through a unified platform',
