@@ -4,7 +4,21 @@ import { ExternalLink, Github, Filter, X, Play, Star } from 'lucide-react';
 
 const Projects: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [selectedProject, setSelectedProject] = useState<any>(null);
+  interface Project {
+    id: number;
+    title: string;
+    category: string;
+    description: string;
+    detailedDescription: string;
+    image: string;
+    tech: string[];
+    githubUrl: string;
+    liveUrl: string;
+    featured: boolean;
+    status: string;
+  }
+  
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const categories = ['All', 'Web Apps', 'API', 'Tools'];
 
@@ -246,6 +260,8 @@ const Projects: React.FC = () => {
                       </motion.button>
                       <motion.a
                         href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
@@ -254,6 +270,8 @@ const Projects: React.FC = () => {
                       </motion.a>
                       <motion.a
                         href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
@@ -343,12 +361,16 @@ const Projects: React.FC = () => {
                       <div className="flex space-x-3">
                         <a
                           href={selectedProject.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="p-3 bg-gray-100 dark:bg-dark-800 rounded-full text-gray-600 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
                         >
                           <Github className="w-5 h-5" />
                         </a>
                         <a
                           href={selectedProject.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="p-3 bg-gray-100 dark:bg-dark-800 rounded-full text-gray-600 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-400 transition-colors"
                         >
                           <ExternalLink className="w-5 h-5" />
