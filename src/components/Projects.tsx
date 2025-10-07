@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, Filter, X, Play, Star } from 'lucide-react';
+import { ExternalLink, Github, X, Play, Star } from 'lucide-react';
 
 const Projects: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState('All');
   interface Project {
     id: number;
     title: string;
@@ -19,8 +18,6 @@ const Projects: React.FC = () => {
   }
   
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-
-  const categories = ['All', 'Web Apps', 'API', 'Tools'];
 
   const projects = [
     {
@@ -65,26 +62,26 @@ const Projects: React.FC = () => {
     {
       id: 4,
       title: 'Automation_IG',
-      category: 'Web Apps',
+      category: 'Tools',
       description: 'Automation_IG is a Python-based system that auto-posts Instagram Reels every 20 minutes, generating captions and thumbnails—for content creators and marketers seeking hands-off content scheduling.',
       detailedDescription: 'Automation_IG automates the posting of Instagram Reels using Python and Meta’s Graph API. Every 20 minutes it uploads a reel from local storage, auto-generates thumbnails and captions, and handles everything via a scheduler without manual intervention. It’s ideal for content creators and marketing pages aiming to keep their feed fresh, consistent, and engaging while minimizing effort.',
       image: 'https://www.interakt.shop/wp-content/uploads/2025/02/How-to-Automate-Your-Instagram-Strategy-Without-Violating-Rules.png',
       tech: ['Python', 'Meta Graph API', 'Scheduler/Cron/Time Module', 'OS & File Handling'],
       githubUrl: 'https://github.com/devteotia1511/Automation_IG.git',
-      liveUrl: '#',
+      liveUrl: 'https://github.com/devteotia1511/Automation_IG.git',
       featured: true,
       status: 'Completed'
     },
     {
       id: 5,
       title: 'Video Cutter',
-      category: 'Web Apps',
+      category: 'Tools',
       description: 'A tool to quickly cut long videos into short clips for easy sharing.',
       detailedDescription: 'A Python-based video shortener that automatically splits long videos into customizable clips (e.g. 30–40 seconds), making it easy for creators to repurpose content for Instagram Reels, YouTube Shorts, and more.',
       image: 'https://www.adoreshare.com/images/products/key-feature/quick-video-cutter/key-1.jpg',
       tech: ['HTML', 'Python', 'Flask', 'JavaScript', 'CSS', 'File System'],
       githubUrl: 'https://github.com/devteotia1511/Video_Cutter.git',
-      liveUrl: '#',
+      liveUrl: 'https://github.com/devteotia1511/Video_Cutter.git',
       featured: false,
       status: 'Completed'
     },
@@ -110,7 +107,7 @@ const Projects: React.FC = () => {
       image: 'https://images.pexels.com/photos/270360/pexels-photo-270360.jpeg?auto=compress&cs=tinysrgb&w=800',
       tech: ['Node.js', 'Commander.js', 'Inquirer', 'Templates', 'Express.js', 'Figlet'],
       githubUrl: 'https://github.com/devteotia1511/CODEGEN_CLI.git',
-      liveUrl: '#',
+      liveUrl: 'https://github.com/devteotia1511/CODEGEN_CLI.git',
       featured: false,
       status: 'In Progress'
     },
@@ -142,9 +139,7 @@ const Projects: React.FC = () => {
     }
   ];
 
-  const filteredProjects = selectedCategory === 'All' 
-    ? projects 
-    : projects.filter(project => project.category === selectedCategory);
+  const filteredProjects = projects;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -181,33 +176,12 @@ const Projects: React.FC = () => {
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Featured <span className="bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">Projects</span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             A showcase of my recent work in web development, mobile apps, and software tools.
           </p>
-
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-3">
-            {categories.map((category) => (
-              <motion.button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
-                  selectedCategory === category
-                    ? 'bg-gradient-to-r from-orange-500 to-red-600 text-white shadow-lg'
-                    : 'bg-white dark:bg-dark-900 text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-dark-600 hover:border-orange-500'
-                }`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Filter className="w-4 h-4 inline mr-2" />
-                {category}
-              </motion.button>
-            ))}
-          </div>
         </motion.div>
 
         <motion.div
-          key={selectedCategory}
           variants={containerVariants}
           initial="hidden"
           animate="visible"
